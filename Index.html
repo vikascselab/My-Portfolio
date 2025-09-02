@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vikas Yadav - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        overflow-x: hidden;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .project-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+      }
+      .project-card .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.3),
+          rgba(59, 130, 246, 0.7)
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .project-card:hover .overlay {
+        opacity: 1;
+      }
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #3b82f6;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, #1e40af, #7e22ce, #ec4899);
+        opacity: 0.25;
+        animation: gradientShift 12s ease infinite;
+      }
+      @keyframes gradientShift {
+        0% {
+          transform: translateX(0) scale(1);
+        }
+        50% {
+          transform: translateX(50px) scale(1.05);
+        }
+        100% {
+          transform: translateX(0) scale(1);
+        }
+      }
+      .parallax {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+      .btn-glow {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+      }
+      .btn-glow:hover {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.9);
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="text-gray-200">
+    <header
+      class="relative bg-gradient-to-br from-gray-900 to-blue-950 text-white text-center py-28 overflow-hidden"
+    >
+      <div class="hero-bg"></div>
+      <div class="relative max-w-6xl mx-auto px-4 z-10">
+        <h1
+          class="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
+        >
+          Vikas Yadav
+        </h1>
+        <p class="text-xl md:text-2xl font-light">
+          Final-Year Engineering Student | Web Developer | Tech Innovator
+        </p>
+      </div>
+    </header>
+
+    <nav class="bg-gray-800/95 backdrop-blur-md shadow-xl sticky top-0 z-20">
+      <div class="max-w-6xl mx-auto px-4 py-4">
+        <ul class="flex justify-center space-x-8">
+          <li>
+            <a
+              href="#about"
+              class="nav-link text-gray-300 hover:text-blue-400 font-medium text-lg"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="nav-link text-gray-300 hover:text-blue-400 font-medium text-lg"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="nav-link text-gray-300 hover:text-blue-400 font-medium text-lg"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#resume"
+              class="nav-link text-gray-300 hover:text-blue-400 font-medium text-lg"
+              >Resume</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="nav-link text-gray-300 hover:text-blue-400 font-medium text-lg"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section
+      id="about"
+      class="py-28 bg-gray-800 parallax"
+      style="
+        background-image: url('https://via.placeholder.com/1920x1080?text=Tech+Background');
+      "
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 fade-in"
+      >
+        <img
+          src="assets/WhatsApp Image 2025-08-02 at 10.49.19 PM.jpeg"
+          alt="Vikas Yadav"
+          class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-4 border-blue-500/40 transform hover:scale-105 transition-transform duration-300"
+        />
+        <div>
+          <h2 class="text-4xl md:text-5xl font-semibold mb-6 text-blue-400">
+            About Me
+          </h2>
+          <p class="text-lg leading-relaxed text-gray-300">
+            I'm Vikas Yadav, a final-year engineering student passionate about
+            web development and innovative technology solutions. With hands-on
+            experience in building dynamic, user-focused websites, I combine
+            technical expertise with creative problem-solving to craft impactful
+            digital experiences. My goal is to leverage my skills in modern web
+            technologies to create cutting-edge applications that make a
+            difference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="skills"
+      class="py-28 bg-gradient-to-br from-gray-900 to-blue-950"
+    >
+      <div class="max-w-6xl mx-auto px-4 fade-in">
+        <h2
+          class="text-4xl md:text-5xl font-semibold mb-10 text-center text-blue-400"
+        >
+          Skills
+        </h2>
+        <ul class="flex flex-wrap justify-center gap-4">
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            HTML5
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            CSS3
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            JavaScript
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            React
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            Node.js
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            Python
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            Git
+          </li>
+          <li
+            class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105"
+          >
+            Tailwind CSS
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="py-28 bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4 fade-in">
+        <h2
+          class="text-4xl md:text-5xl font-semibold mb-10 text-center text-blue-400"
+        >
+          Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="project-card bg-gray-700 rounded-lg shadow-2xl overflow-hidden"
+            data-tilt
+            data-tilt-max="10"
+            data-tilt-speed="400"
+            data-tilt-perspective="1000"
+          >
+            <img
+              src="assets/image.png"
+              alt="Project 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="overlay"></div>
+            <div class="p-6 relative z-10">
+              <h3 class="text-2xl font-semibold mb-3 text-gray-200">
+                Portfolio Website
+              </h3>
+              <p class="text-gray-400">
+                A dynamic personal portfolio built with HTML, CSS, and
+                JavaScript, showcasing my engineering projects with a focus on
+                interactivity and modern design.
+              </p>
+            </div>
+          </div>
+          <div
+            class="project-card bg-gray-700 rounded-lg shadow-2xl overflow-hidden"
+            data-tilt
+            data-tilt-max="10"
+            data-tilt-speed="400"
+            data-tilt-perspective="1000"
+          >
+            <img
+              src="assets/image copy.png"
+              alt="Project 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="overlay"></div>
+            <div class="p-6 relative z-10">
+              <h3 class="text-2xl font-semibold mb-3 text-gray-200">
+                Task Management App
+              </h3>
+              <p class="text-gray-400">
+                A web-based task manager developed with React and Node.js,
+                featuring real-time updates and a sleek, user-friendly
+                interface.
+              </p>
+            </div>
+          </div>
+          <div
+            class="project-card bg-gray-700 rounded-lg shadow-2xl overflow-hidden"
+            data-tilt
+            data-tilt-max="10"
+            data-tilt-speed="400"
+            data-tilt-perspective="1000"
+          >
+            <img
+              src="assets/image copy 2.png"
+              alt="Project 3"
+              class="w-full h-64 object-cover"
+            />
+            <div class="overlay"></div>
+            <div class="p-6 relative z-10">
+              <h3 class="text-2xl font-semibold mb-3 text-gray-200">
+                E-Commerce Dashboard
+              </h3>
+              <p class="text-gray-400">
+                A responsive dashboard for e-commerce analytics, built with
+                Python and React, offering data visualization and user
+                management features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="resume"
+      class="py-28 bg-gradient-to-br from-gray-900 to-blue-950 text-center"
+    >
+      <div class="max-w-6xl mx-auto px-4 fade-in">
+        <h2 class="text-4xl md:text-5xl font-semibold mb-6 text-blue-400">
+          Resume
+        </h2>
+        <p class="text-lg text-gray-300 mb-8">
+          Check out my academic and project experience as a final-year
+          engineering student.
+        </p>
+        <a
+          href="assets/resume.pdf"
+          download
+          class="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-lg shadow-lg btn-glow hover:from-blue-600 hover:to-purple-600 transition-all"
+          >Download Resume</a
+        >
+      </div>
+    </section>
+
+    <section id="contact" class="py-28 bg-gray-800 text-center">
+      <div class="max-w-6xl mx-auto px-4 fade-in">
+        <h2 class="text-4xl md:text-5xl font-semibold mb-6 text-blue-400">
+          Contact
+        </h2>
+        <p class="text-lg text-gray-300">
+          Email:
+          <a
+            href="mailto:vikas.yadav@example.com"
+            class="text-blue-400 hover:text-blue-300 transition-colors"
+            >vikas.yadav@example.com</a
+          >
+        </p>
+        <p class="text-lg text-gray-300">
+          Phone:
+          <a
+            href="tel:+1234567890"
+            class="text-blue-400 hover:text-blue-300 transition-colors"
+            >(123) 456-7890</a
+          >
+        </p>
+        <p class="text-lg text-gray-300 mt-6">
+          Let's build the future of tech together!
+        </p>
+      </div>
+    </section>
+
+    <footer
+      class="bg-gradient-to-br from-gray-900 to-blue-900 text-white text-center py-10"
+    >
+      <p class="text-gray-300">&copy; 2025 Vikas Yadav. All rights reserved.</p>
+      <div class="mt-4 flex justify-center space-x-6">
+        <a
+          href="https://linkedin.com"
+          class="text-blue-400 hover:text-blue-300 transition-colors"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com"
+          class="text-blue-400 hover:text-blue-300 transition-colors"
+          >GitHub</a
+        >
+        <a
+          href="https://leetcode.com"
+          class="text-blue-400 hover:text-blue-300 transition-colors"
+          >LeetCode</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      // Add fade-in animation when sections come into view
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        elements.forEach((element) => observer.observe(element));
+
+        // Initialize Vanilla Tilt for project cards
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+          max: 10,
+          speed: 400,
+          perspective: 1000,
+          glare: true,
+          "max-glare": 0.3,
+        });
+      });
+    </script>
+  </body>
+</html>
